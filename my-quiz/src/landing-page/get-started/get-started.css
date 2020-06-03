@@ -1,0 +1,16 @@
+.get-started-image {
+  width: 100%;
+  height: auto; }
+
+.get-started-image img {
+  width: 100%;
+  height: auto; }
+
+.get-started-button {
+  background-color: tomato;
+  color: white;
+  width: 30%;
+  margin: auto;
+  margin-top: 40px;
+  height: 60px;
+  font-size: 20px; }

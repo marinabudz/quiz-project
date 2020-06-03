@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Navigation from "./navigation/navigation";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import LandingPage from "./landing-page/landing-page";
+import Login from "./log-in/log-in";
+import Register from "./sign-up/sign-up";
+import * as ROUTES from "./constants/routes";
+import Firebase, { FirebaseContext } from "./firebase/index";
+export default class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Router>
+          <Navigation />
+          <hr />
+          <Route exact path={ROUTES.LANDING} component={LandingPage} />
+          <Route path={ROUTES.SIGN_IN} component={Login} />
+          <Route path={ROUTES.SIGN_UP} component={Register} />
+          {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+          <Route path={ROUTES.HOME} component={HomePage} />
+          <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+          <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
+        </Router>
+      </React.Fragment>
+    );
+  }
 }
-
-export default App;
