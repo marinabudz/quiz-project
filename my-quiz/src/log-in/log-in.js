@@ -4,11 +4,15 @@ import { withFirebase } from "../firebase/index";
 import { compose } from "recompose";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
+import { PasswordForgetLink } from "../password-forget/password-forget";
+import { RegisterLink } from "../sign-up/sign-up";
 
 const Login = () => {
   return (
     <div>
       <LoginForm />
+      <PasswordForgetLink />
+      <RegisterLink />
     </div>
   );
 };

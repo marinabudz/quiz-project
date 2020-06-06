@@ -2,9 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
 import SignOut from "../sign-out/sign-out";
+import AuthUserContext from "../session/session";
 
-const Navigation = ({ authUser }) => (
-  <div>{authUser ? <NatigationAuth /> : <NatigationNotAuth />} </div>
+const Navigation = () => (
+  <div>
+    <AuthUserContext.Consumer>
+      {authUser => (authUser ? <NatigationAuth /> : <NatigationNotAuth />)}
+    </AuthUserContext.Consumer>
+  </div>
 );
 
 const NatigationAuth = () => {
@@ -79,4 +84,8 @@ export default Navigation;
 //       <SignOut />
 //     </div>
 //   </div>
+// );
+
+// const Navigation = ({ authUser }) => (
+//   <div>{authUser ? <NatigationAuth /> : <NatigationNotAuth />} </div>
 // );

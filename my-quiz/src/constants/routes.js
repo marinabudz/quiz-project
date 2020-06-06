@@ -5,6 +5,7 @@ export const HOME = "/home";
 export const ACCOUNT = "/account";
 export const ADMIN = "/admin";
 export const PASSWORD_FORGET = "/pw-forget";
+export const PASSWORD_CHANGE = "/pw-change";
 export const WHAT_OFFER = "/what-offer";
 export const CONTACT = "/contact";
 export const ABOUT_US = "/about-us";
