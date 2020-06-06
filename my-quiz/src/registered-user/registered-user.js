@@ -1,9 +1,10 @@
 import React from "react";
+import MainPage from "./main-page/main-page";
 
 const HomePage = () => {
   return (
     <div>
-      <p> Congrats on successful Log In!</p>
+      <MainPage />
     </div>
   );
 };

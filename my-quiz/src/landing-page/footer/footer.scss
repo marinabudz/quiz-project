@@ -1,16 +1,32 @@
+$mdSize: 1024px;
+$smSize: 760px;
+
 .footer {
   padding-top: 1%;
   font-size: 30px;
   padding-bottom: 1%;
   background-color: #384269;
+  text-align: center;
+
   &__logo {
     width: 100px;
     height: 100px;
     border: none;
     border-radius: 80px;
+    margin: auto;
   }
   &__logo img {
+    width: 100%;
+    height: auto;
   }
   &__social {
+    margin: auto;
+  }
+}
+.container {
+  @media screen and(max-width: $mdSize) {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -4,14 +4,13 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="container d-flex flex-lg-row flex-sm-column justify-content-lg-between justify-content-sm-center ">
+    <div className="footer pt-sm-4 pb-sm-4">
+      <div className="container d-flex flex-lg-row flex-sm-column justify-content-lg-between">
         <img className="footer__logo" src={logo} alt="logo" />
         <span className="text-capitalize pt-4 text-white ">
-          {" "}
           Let's make studying fun!
         </span>
-        <div className="footer__social d-flex flex-row pt-4">
+        <div className="footer__social d-flex flex-row pt-md-0 pt-sm-4">
           <a href="">
             <img
               src="https://img.icons8.com/fluent/50/000000/facebook-new.png"
