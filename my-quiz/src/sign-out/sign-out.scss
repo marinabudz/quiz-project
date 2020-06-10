@@ -3,14 +3,16 @@ $smSize: 760px;
 
 .button {
   background-color: tomato;
-  width: 140px;
+  width: 120px;
   font-weight: bold;
   font-size: 18px;
   padding: 5%;
   @media screen and(max-width: $mdSize) {
-    width: 40%;
-    margin: auto;
     padding: 2%;
+    margin: auto;
+  }
+  @media screen and(max-width: $smSize) {
+    width: 190px;
   }
 }
 .button a {

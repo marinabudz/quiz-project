@@ -14,10 +14,17 @@
       .header__logo {
         width: 70px;
         height: 70px; } }
+  @media screen and (max-width: 760px) {
+    .header__menu {
+      margin-bottom: 5%; } }
   .header__menu a {
     color: darkblue !important;
     margin-left: 25px !important;
     font-size: 20px; }
+    @media screen and (max-width: 760px) {
+      .header__menu a {
+        margin-left: 0px !important;
+        text-align: center; } }
   .header__buttonSize {
     width: 110px;
     font-weight: bold;

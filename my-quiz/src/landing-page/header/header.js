@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import headerPicture from "./images/main.pdf";
+import headerPicture from "./images/main.png";
 import Typing from "react-typing-animation";
 import "./header.css";
 

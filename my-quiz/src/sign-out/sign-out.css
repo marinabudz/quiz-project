@@ -1,14 +1,16 @@
 .button {
   background-color: tomato;
-  width: 140px;
+  width: 120px;
   font-weight: bold;
   font-size: 18px;
   padding: 5%; }
   @media screen and (max-width: 1024px) {
     .button {
-      width: 40%;
-      margin: auto;
-      padding: 2%; } }
+      padding: 2%;
+      margin: auto; } }
+  @media screen and (max-width: 760px) {
+    .button {
+      width: 190px; } }
 
 .button a {
   color: white !important; }

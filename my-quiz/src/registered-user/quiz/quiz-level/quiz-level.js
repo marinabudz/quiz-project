@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../../constants/routes";
-import basic from "./images/basic.pdf";
-import middle from "./images/intermidiate.pdf";
-import advanced from "./images/advanced.pdf";
-import "./quiz-level.css";
+
+import basic from "../images/basic.png";
+import middle from "../images/intermidiate.png";
+import advanced from "../images/advanced.png";
+import "./styles/quiz-level.css";
 const Quiz = () => {
   return (
     <div className="quizes">
       <div className="quiz-container text-center pt-5">
         <div className="d-flex flex-column quiz ">
-          <img src={basic} alt="basic-level" />
+          <img src={basic} className="quiz-image" alt="basic-level" />
           <p className="quiz__name">Basic Quiz</p>
           <p className="text-center">_________________</p>
           <p className="quiz__description ">
@@ -23,7 +24,7 @@ const Quiz = () => {
           </button>
         </div>
         <div className="d-flex flex-column quiz">
-          <img src={middle} alt="basic-level" />
+          <img src={middle} className="quiz-image" alt="basic-level" />
           <p className="quiz__name">Intermidiate Quiz</p>
           <p className="text-center">_________________</p>
           <p className="quiz__description mb-5">
@@ -35,7 +36,7 @@ const Quiz = () => {
           </button>
         </div>
         <div className="d-flex flex-column quiz">
-          <img src={advanced} alt="basic-level" />
+          <img src={advanced} className="quiz-image" alt="basic-level" />
           <p className="quiz__name"> Advanced Quiz</p>
           <p className="text-center">_________________</p>
           <p className="quiz__description mb-5">

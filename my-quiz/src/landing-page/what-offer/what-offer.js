@@ -1,7 +1,7 @@
 import React from "react";
-import offerImage from "./images/6.pdf";
-import chatbotImage from "./images/3.eps";
-import explanationImage from "./images/4.pdf";
+import offerImage from "./images/6.png";
+import chatbotImage from "./images/3.png";
+import explanationImage from "./images/4.png";
 import "./what-offer.css";
 const Offer = () => {
   return (

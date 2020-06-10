@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import Api from "../../../../api/api";
+import * as ROUTES from "../../../../constants/routes";
+import { Link } from "react-router-dom";
+import win from "../images/win3.png";
+import "../styles/quiz-level.css";
+import bg from "../images/10.png";
+import Footer from "../../../../landing-page/footer/footer";
 export default class BasicQuiz extends Component {
   apiData = new Api();
   state = {
@@ -72,55 +78,118 @@ export default class BasicQuiz extends Component {
     }
   };
 
-  correctButtton = () => {
-    const { currentQuestion, data } = this.state;
-    if (currentQuestion < data.length - 1) {
-      return (
-        <button
-          disabled={this.state.disabled}
-          onClick={this.nextQuestionHandler}
-        >
-          Next
-        </button>
-      );
-    }
-  };
-
   render() {
     const {
       data,
       options,
       currentQuestion,
       isEnd,
-
       questions,
       score,
       disabled
     } = this.state;
-    if (!data) {
-    }
-    if (!isEnd) {
+    if (data.length === 0) {
       return (
-        <div>
-          <span>{`Questions ${currentQuestion}  out of ${data.length -
-            1} remaining `}</span>
-          <div>
-            <h3> Slect synonym of the words:</h3>
-            <ul>
-              {questions.map((question, index) => {
-                return <li key={index}> {question}</li>;
-              })}
-            </ul>
+        <h3 className="quiz-loading">
+          Data is loading
+          <div class="loadingio-spinner-spinner-ntt0kww4wf spinner">
+            <div class="ldio-uhc8q8oxs89">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
-          <div>
-            {options.map(option => {
-              return <p onClick={() => this.checkAnswer(option)}>{option}</p>;
-            })}
+          <div style={{ marginTop: 200 }}>
+            <Footer />
           </div>
-          <div>{data.length}</div>
-          <div>{this.correctButtton}</div>
-        </div>
+        </h3>
       );
+    } else {
+      if (!isEnd) {
+        return (
+          <div className="each-quiz text-center d-flex flex-column">
+            <div className="each-quiz__container">
+              <span>{`Questions ${currentQuestion + 1}  out of ${
+                data.length
+              } questions `}</span>
+              <div>
+                <h3 className="each-quiz__title">
+                  Select synonym of the words:
+                </h3>
+                <div className="mt-4 mb-4 each-quiz__questions text-capitalize">
+                  {questions.map((question, index) => {
+                    return <div key={index}> {question} </div>;
+                  })}
+                </div>
+              </div>
+              <div>
+                {options.map(option => {
+                  return (
+                    <button
+                      className="btn btn-default each-quiz__button text-capitalize"
+                      onClick={() => this.checkAnswer(option)}
+                    >
+                      {option}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {currentQuestion < data.length - 1 && (
+                <button
+                  className="btn btn-default each-quiz__button each-quiz__next-button"
+                  disabled={disabled}
+                  onClick={this.nextQuestion}
+                >
+                  Next
+                </button>
+              )}
+
+              {currentQuestion === data.length - 1 && (
+                <button
+                  className="btn btn-default each-quiz__button each-quiz__finish-button"
+                  onClick={this.finishQuiz}
+                >
+                  Finish
+                </button>
+              )}
+            </div>
+            <img src={bg} alt="background" className="each-quiz__image" />
+            <Footer />
+          </div>
+        );
+      } else {
+        return (
+          <div className="quiz-result text-monospace">
+            <h3>Quiz is Over </h3>
+
+            <h4 className="mb-5 mt-3">
+              Your Final score is
+              <span className="badge badge-warning text-wrap ml-3 mr-3">
+                {score}
+              </span>
+              points
+            </h4>
+            <img className="result-trophy" src={win} alt="trophy" />
+            <h4 className="mt-5 mb-5 ">Never give up and try one more time!</h4>
+            <Link to={ROUTES.QUIZ}>
+              <button className="btn btn-default quiz-result__button">
+                Restart
+              </button>
+            </Link>
+            <Footer />
+          </div>
+        );
+      }
     }
   }
 }

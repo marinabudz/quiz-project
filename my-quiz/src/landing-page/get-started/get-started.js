@@ -1,5 +1,5 @@
 import React from "react";
-import getStarted from "./images/5.eps";
+import getStarted from "./images/5.png";
 import "./get-started.css";
 const GetStarted = () => {
   return (

@@ -18,18 +18,26 @@ $smSize: 760px;
       height: 70px;
     }
   }
+  &__menu {
+    @media screen and(max-width: $smSize) {
+      margin-bottom: 5%;
+    }
+  }
   &__menu a {
     color: darkblue !important;
     margin-left: 25px !important;
-
     font-size: 20px;
+
+    @media screen and(max-width: $smSize) {
+      margin-left: 0px !important;
+      text-align: center;
+    }
   }
 
   &__buttonSize {
     width: 110px;
     font-weight: bold;
     height: 40px;
-
     border: none;
     @media screen and(max-width: $mdSize) {
       width: 30%;

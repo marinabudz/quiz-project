@@ -5,6 +5,7 @@ import { Navbar, Nav, Button } from "react-bootstrap";
 import logo from "./images/header-logo.jpg";
 import SignOut from "../sign-out/sign-out";
 import AuthUserContext from "../session/session";
+
 import "./navigation.css";
 
 const Navigation = () => (
