@@ -37,7 +37,7 @@ export default class Api {
   _questionTemplate = quiz => {
     return {
       questions: quiz.quiz,
-      choices: quiz.option,
+      options: quiz.option,
       answer: quiz.correct
     };
   };

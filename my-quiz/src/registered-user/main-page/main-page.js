@@ -1,6 +1,6 @@
 import React from "react";
 import "./main-page.css";
-import background from "./images/7.jpg";
+import background from "./images/8.png";
 
 const MainPage = () => {
   return (
@@ -9,7 +9,7 @@ const MainPage = () => {
         <img src={background} alt="background" className="main-page__picture" />
         <div className="main-page-text">
           <p className="main-page-text__title"> Welcome dear friend!</p>
-          <p> Let's explore and improve English skills together </p>
+          <p> Let's explore English together </p>
           <button className="btn btn-default main-page-text__button">
             Get started
           </button>

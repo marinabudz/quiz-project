@@ -7,7 +7,9 @@ const Offer = () => {
   return (
     <React.Fragment>
       {/* first block -> multilevel quiz */}
-      <h1 className="text-center mt-5 pt-5"> What do we offer ?</h1>
+      <h1 className="text-center mt-5 pt-5" id="what-we-offer">
+        What do we offer ?
+      </h1>
 
       <div className="offer-quiz">
         <div className="offer-quiz__picture">

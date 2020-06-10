@@ -12,6 +12,7 @@ import BasicQuiz from "./registered-user/quiz/quiz-level/basic-level/basic-level
 import MiddleQuiz from "./registered-user/quiz/quiz-level/middle-level/middle-level";
 import AdvancedQuiz from "./registered-user/quiz/quiz-level/advanced-level/advanced-level";
 import withAuthentication from "./session/with-authentication";
+import Header from "./landing-page/header/header";
 import PasswordForgetPage from "./password-forget/password-forget";
 import PasswordChangePage from "./password-update/password-update";
 import Account from "./registered-user/account/account";
@@ -20,7 +21,7 @@ import * as ROUTES from "./constants/routes";
 const App = () => (
   <Router>
     <Navigation />
-    <hr />
+    <hr style={{ marginTop: 0, marginBottom: 0 }} />
     <Route exact path={ROUTES.LANDING} component={LandingPage} />
     <Route path={ROUTES.SIGN_IN} component={Login} />
     <Route path={ROUTES.SIGN_UP} component={Register} />
@@ -34,6 +35,7 @@ const App = () => (
     <Route path={ROUTES.BASIC_QUIZ} component={BasicQuiz} />
     <Route path={ROUTES.MIDDLE_QUIZ} component={MiddleQuiz} />
     <Route path={ROUTES.ADVANCED_QUIZ} component={AdvancedQuiz} />
+    <Route path={ROUTES.ABOUT_US} component={Header} />
 
     {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
           <Route path={ROUTES.ACCOUNT} component={AccountPage} />

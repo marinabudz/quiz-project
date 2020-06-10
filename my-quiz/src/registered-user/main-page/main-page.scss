@@ -1,4 +1,4 @@
-$mdSize: 1024px;
+$mdSize: 1020px;
 $smSize: 760px;
 .main-page {
   &__picture {
@@ -10,22 +10,19 @@ $smSize: 760px;
   position: relative;
 }
 .main-page-text {
-  padding-top: 23%;
-  width: 50%;
+  width: 100%;
   font-size: 28px;
   position: absolute;
   text-align: center;
+  margin-top: 11%;
+  line-height: 40px;
   @media screen and(max-width: $mdSize) {
-    width: 40%;
-    padding-top: 20%;
-    font-size: 18px;
-    padding-left: 5%;
+    font-size: 17px;
+    line-height: 20px;
   }
   @media screen and(max-width: $smSize) {
-    font-size: 16px;
-    padding-top: 10%;
-    padding-left: 0%;
-    width: 40%;
+    font-size: 12px;
+    line-height: 8px;
   }
 
   &__title {
@@ -35,23 +32,27 @@ $smSize: 760px;
       font-size: 25px;
     }
     @media screen and(max-width: $smSize) {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
   &__button {
-    width: 40%;
+    width: 15%;
     background-color: tomato;
     color: white;
     text-align: center;
     height: 70px;
     border-radius: 20px;
+    font-size: 20px;
+    height: 50px;
     @media screen and(max-width: $mdSize) {
       height: 35px;
-      width: 40%;
       font-size: 13px;
     }
     @media screen and(max-width: $smSize) {
-      width: 67%;
+      width: 20%;
+      height: 25px;
+      padding: 0px;
+      font-size: 10px;
     }
   }
 }

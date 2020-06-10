@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./log-in.css";
+import background from "./images/7.jpg";
 import { withFirebase } from "../firebase/index";
 import { compose } from "recompose";
 import { Link, withRouter } from "react-router-dom";
@@ -11,8 +12,6 @@ const Login = () => {
   return (
     <div>
       <LoginForm />
-      <PasswordForgetLink />
-      <RegisterLink />
     </div>
   );
 };
@@ -52,31 +51,56 @@ class LoginFormBase extends Component {
     const { password, email, error } = this.state;
     const isInvalid = password === "" || email === "";
     return (
-      <div className="container">
-        <form onSubmit={this.onSubmit} className="d-flex flex-column">
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={this.onChange}
-            value={email}
-            name="email"
-          />
-          <input
-            name="password"
-            type="password"
-            onChange={this.onChange}
-            value={password}
-            placeholder="Password"
-          />
-          <button
-            type="submit"
-            className="btn btn-default"
-            disabled={isInvalid}
-          >
-            Log In
-          </button>
-          {error && <p>{error.message}</p>}
-        </form>
+      <div className="registration d-flex flex-row justify-content-between">
+        <img
+          src={background}
+          alt="background"
+          className="registration__picture"
+        />
+        <div className="registration__items d-flex flex-column">
+          <p className="pb-lg-5 pb-sm-3 pt-lg-5 pt-sm-3 mb-0 registration__title">
+            Login Form
+          </p>
+          <form onSubmit={this.onSubmit} className="d-flex flex-column">
+            <div className="registration__form-item">
+              <i class="fa fa-user mt-2" aria-hidden="true"></i>
+              <input
+                type="email"
+                placeholder="Email"
+                onChange={this.onChange}
+                value={email}
+                name="email"
+                className="registration__form-input form-control shadow-none"
+              />
+            </div>
+            <div className="registration__form-item">
+              <i class="fa fa-lock  mt-2" aria-hidden="true"></i>
+              <input
+                name="password"
+                type="password"
+                onChange={this.onChange}
+                value={password}
+                placeholder="Password"
+                className="registration__form-input form-control shadow-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="btn btn-default pb-lg-4 pb-sm-1 pt-lg-4 pt-sm-1 registration__button"
+              disabled={isInvalid}
+            >
+              Log In
+            </button>
+            {error && <p>{error.message}</p>}
+          </form>
+          <Link to={ROUTES.SIGN_UP} className="mt-5 registration-link ">
+            Don't have an account?
+          </Link>
+          <Link to={ROUTES.PASSWORD_FORGET} className="mt-3 registration-link ">
+            Forgot Password?
+          </Link>
+        </div>
       </div>
     );
   }

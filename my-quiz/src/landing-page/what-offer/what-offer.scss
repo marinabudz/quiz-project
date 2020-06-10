@@ -26,13 +26,13 @@ $xsSize: 340px;
     text-align: center;
     @media screen and(max-width: $mdSize) {
       width: 100%;
+      padding: 0px;
     }
   }
   &__picture {
     width: 50%;
     height: auto;
     @media screen and(max-width: $mdSize) {
-      margin-top: 60px;
       width: 100%;
     }
   }

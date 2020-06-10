@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./sign-up.css";
+import background from "./images/7.jpg";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
 import { withFirebase } from "../firebase/context";
@@ -52,60 +53,86 @@ class RegisterFormBase extends Component {
       email === "" ||
       username === "";
     return (
-      <div className="container ">
-        <form onSubmit={this.onSubmit} className="d-flex flex-column col-6">
-          <input
-            placeholder="Full name"
-            name="username"
-            onChange={this.onChange}
-            type="text"
-            value={username}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={this.onChange}
-            name="email"
-          />
-          <input
-            type="password"
-            value={password}
-            name="password"
-            placeholder="Password"
-            onChange={this.onChange}
-          />
-          <input
-            type="password"
-            value={passwordVerify}
-            placeholder="Confirm password"
-            name="passwordVerify"
-            onChange={this.onChange}
-          />
-          <button
-            className="btn btn-default"
-            type="submit"
-            disabled={isInvalid}
+      <div className="registration d-flex flex-row justify-content-between">
+        <img
+          src={background}
+          alt="background"
+          className="registration__picture"
+        />
+        <div className="registration__items d-flex flex-column">
+          <p className="pb-lg-5 pb-sm-3 pt-lg-5 pt-sm-3 mb-0 registration__title">
+            Registration Form
+          </p>
+          <form
+            onSubmit={this.onSubmit}
+            className="d-flex flex-column registration__form "
           >
-            Sumbit
-          </button>
-          {error && <p>{error.message}</p>}
-        </form>
+            <div className="registration__form-item">
+              <i class="fa fa-user mt-2" aria-hidden="true"></i>
+              <input
+                placeholder=" Full name"
+                name="username"
+                onChange={this.onChange}
+                type="text"
+                value={username}
+                className="registration__form-input form-control shadow-none"
+              />
+            </div>
+            <div className="registration__form-item">
+              <i class="fa fa-envelope  mt-2" aria-hidden="true"></i>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={this.onChange}
+                name="email"
+                className="registration__form-input form-control shadow-none"
+              />
+            </div>
+
+            <div className="registration__form-item">
+              <i class="fa fa-lock  mt-2" aria-hidden="true"></i>
+              <input
+                type="password"
+                value={password}
+                name="password"
+                placeholder="Password"
+                onChange={this.onChange}
+                className="registration__form-input form-control shadow-none"
+              />
+            </div>
+            <div className=" registration__form-item">
+              <i class="fa fa-lock  mt-2" aria-hidden="true"></i>
+              <input
+                className="registration__form-input form-control shadow-none"
+                type="password"
+                value={passwordVerify}
+                placeholder="Confirm password"
+                name="passwordVerify"
+                onChange={this.onChange}
+              />
+            </div>
+            <button
+              className="btn btn-default pb-lg-4 pb-sm-1 pt-lg-4 pt-sm-1 registration__button"
+              type="submit"
+              disabled={isInvalid}
+            >
+              Submit
+            </button>
+            {error && <p>{error.message}</p>}
+          </form>
+        </div>
       </div>
     );
   }
 }
-const RegisterLink = () => (
-  <p className="text-center">
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-  </p>
-);
+
 // after successful sign up redirect user to HOME page
 // use compose to organize higher-order components
 const RegisterForm = compose(withRouter, withFirebase)(RegisterFormBase);
 
 export default Register;
-export { RegisterForm, RegisterLink };
+export { RegisterForm };
 
 //{
 /* <div className="auth-page">

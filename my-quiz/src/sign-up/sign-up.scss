@@ -1,34 +1,78 @@
-.auth-page {
-  .hero.is-success {
-    background: #f2f6fa;
+$mdSize: 1024px;
+$smSize: 760px;
+
+.registration {
+  &__picture {
+    width: 100%;
+    height: 50%;
+    position: relative;
   }
-  .hero .nav,
-  .hero.is-success .nav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
+  &__items {
+    position: absolute;
+    margin-top: 16%;
+    width: 40%;
+    position: absolute;
+    text-align: center;
+    margin-left: 5%;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    @media screen and(max-width: $mdSize) {
+      margin-top: 10%;
+      margin-left: 2%;
+    }
+    @media screen and(max-width: $smSize) {
+      margin-top: 14%;
+      width: 30%;
+    }
   }
-  .box {
-    margin-top: 5rem;
+
+  &__title {
+    font-weight: bold;
+    color: #3a446e;
+    font-size: 30px;
+
+    @media screen and(max-width: $smSize) {
+      font-size: 15px;
+      padding-bottom: 5px;
+    }
   }
-  .avatar {
-    margin-top: -70px;
-    padding-bottom: 20px;
+  &__button {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 40px;
+    width: 40%;
+    background-color: #38436d;
+    margin-right: auto;
+    margin-left: auto;
+    color: whitesmoke;
+    @media screen and(max-width: $mdSize) {
+      width: 50%;
+    }
+    @media screen and(max-width: $mdSize) {
+      font-size: 12px;
+      width: 60%;
+      margin-top: 10px;
+    }
   }
-  .avatar img {
-    padding: 5px;
-    background: #fff;
-    border-radius: 50%;
-    -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),
-      0 0 0 1px rgba(10, 10, 10, 0.1);
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  &__form-item {
+    border-bottom: 2px solid #38436d;
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    @media screen and(max-width: $smSize) {
+      padding: 1%;
+    }
   }
-  input {
-    font-weight: 300;
-  }
-  p {
-    font-weight: 700;
-  }
-  p.subtitle {
-    padding-top: 1rem;
+  &__form-input {
+    border: none;
+    padding: 0;
+    padding-left: 3%;
+    font-size: 20px;
+    @media screen and(max-width: $mdSize) {
+      font-size: 16px;
+    }
+    @media screen and(max-width: $smSize) {
+      font-size: 12px;
+    }
   }
 }

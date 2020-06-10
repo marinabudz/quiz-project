@@ -1,3 +1,5 @@
+$mdSize: 1024px;
+$smSize: 760px;
 .get-started-image {
   width: 100%;
   height: auto;
@@ -14,4 +16,8 @@
   margin-top: 40px;
   height: 60px;
   font-size: 20px;
+  @media screen and(max-width: $mdSize) {
+    width: 50%;
+    margin-bottom: 60px;
+  }
 }

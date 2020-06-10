@@ -37,13 +37,13 @@
     text-align: center; }
     @media screen and (max-width: 1024px) {
       .offer-quiz__details {
-        width: 100%; } }
+        width: 100%;
+        padding: 0px; } }
   .offer-quiz__picture {
     width: 50%;
     height: auto; }
     @media screen and (max-width: 1024px) {
       .offer-quiz__picture {
-        margin-top: 60px;
         width: 100%; } }
   .offer-quiz__picture img {
     width: 100%;

@@ -14,8 +14,8 @@ export default class MiddleQuiz extends Component {
     this.apiData.getBasicWords().then(data => this.setState({ data }));
   }
   getData(arr) {
-    return arr.map(({ choices, questions, answer }) => {
-      const choice = choices.map(elem => {
+    return arr.map(({ options, questions, answer }) => {
+      const option = options.map(elem => {
         return <p> {elem}</p>;
       });
       const question = questions.map(elem => {
@@ -24,7 +24,7 @@ export default class MiddleQuiz extends Component {
       return (
         <div className="d-flex flex-row">
           <div className="pl-5 d-flex flex-column">question: {question}</div>
-          <div className="pl-5 d-flex flex-column">choices:{choice}</div>
+          <div className="pl-5 d-flex flex-column">choices:{option}</div>
           <div className="pl-5 d-flex flex-column">answer: {answer}</div>
         </div>
       );
