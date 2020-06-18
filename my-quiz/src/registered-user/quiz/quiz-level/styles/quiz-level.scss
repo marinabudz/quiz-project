@@ -76,7 +76,6 @@ $smSize: 760px;
   &__image {
     width: 100%;
     height: auto;
-    margin-top: -10%;
   }
 
   &__container {
@@ -134,6 +133,7 @@ $smSize: 760px;
   &__next-button {
     background-color: #8889ff;
     width: 20%;
+
     @media screen and(max-width: $mdSize) {
       width: 30%;
       text-align: center;

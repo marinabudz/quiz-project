@@ -113,7 +113,7 @@ export default class BasicQuiz extends Component {
           </div>
         </h3>
       );
-    } else {
+    } else if (data.length > 0) {
       if (!isEnd) {
         return (
           <div className="each-quiz text-center d-flex flex-column">
@@ -143,7 +143,6 @@ export default class BasicQuiz extends Component {
                   );
                 })}
               </div>
-
               {currentQuestion < data.length - 1 && (
                 <button
                   className="btn btn-default each-quiz__button each-quiz__next-button"
@@ -164,14 +163,12 @@ export default class BasicQuiz extends Component {
               )}
             </div>
             <img src={bg} alt="background" className="each-quiz__image" />
-            <Footer />
           </div>
         );
-      } else {
+      } else if (isEnd) {
         return (
           <div className="quiz-result text-monospace">
             <h3>Quiz is Over </h3>
-
             <h4 className="mb-5 mt-3">
               Your Final score is
               <span className="badge badge-warning text-wrap ml-3 mr-3">

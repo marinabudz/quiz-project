@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import background from "./images/7.jpg";
 import { withFirebase } from "../firebase";
 import "./password-forget.css";
-import * as ROUTES from "../constants/routes";
 
 const PasswordForgetPage = () => (
   <div>
-    <h1>PasswordForget</h1>
     <PasswordForgetForm />
   </div>
 );
@@ -48,24 +46,47 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={this.state.email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
+      <div className="registration d-flex flex-row justify-content-between">
+        <img
+          src={background}
+          alt="background"
+          className="registration__picture"
         />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
-        {error && (
-          <p>
-            Unfortunately {error.message} error occured but our team is already
-            on it
+        <div className="registration__items d-flex flex-column">
+          <p className="pb-lg-5 pb-sm-3 pt-lg-5 pt-sm-3 mb-0 registration__title">
+            Forgot Password Form
           </p>
-        )}
-      </form>
+          <form
+            onSubmit={this.onSubmit}
+            className="d-flex flex-column registration__form "
+          >
+            <div className="registration__form-item">
+              <i class="fa fa-envelope  mt-2" aria-hidden="true"></i>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={this.onChange}
+                name="email"
+                className="registration__form-input form-control shadow-none"
+              />
+            </div>
+            <button
+              disabled={isInvalid}
+              type="submit"
+              className="btn btn-default pb-lg-4 pb-sm-1 pt-lg-4 pt-sm-1 registration__button"
+            >
+              Reset My Password
+            </button>
+            {error && (
+              <p>
+                Unfortunately {error.message} error occured but our team is
+                already on it
+              </p>
+            )}
+          </form>
+        </div>
+      </div>
     );
   }
 }
